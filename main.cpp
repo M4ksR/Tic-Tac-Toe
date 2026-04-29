@@ -30,12 +30,19 @@ int main() {
         std::cout << "> ";
         std::cin >> input;
 
-        int choice = std::stoi(input);
-        if (choice < 3 || choice > 6) { 
+        int choice;
+        
+        try { 
+            choice = std::stoi(input);
+            if (choice < 3 || choice > 6) { 
+                throw std::invalid_argument("Invalid board size"); 
+            }    
+        }
+        catch(const std::invalid_argument&) {
             std::cout << std::endl << "Invalid board size" << std::endl << std::endl;
             continue; 
         }
-        
+
         Game game(setting, choice);
 
     }
