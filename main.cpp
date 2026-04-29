@@ -1,4 +1,3 @@
-#include <iostream>
 #include <string>
 
 #include "src/ClassGame.hpp"
@@ -44,7 +43,7 @@ int main() {
         }
 
         Game game(setting, choice);
-
+ 
     }
 
     return 0;
